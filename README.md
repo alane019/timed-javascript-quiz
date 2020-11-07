@@ -1,4 +1,4 @@
-# timed-javascript-quiz
+# Timed javascript quiz
 
 ## Description 
 
@@ -19,7 +19,7 @@ The purpose of this repository is <**PURPOSE**>
   - [License](#license) 
 
 ## Examples
-Demo is viewable here: <https://alane019.github.io/template-static-website/>
+Demo is viewable here: <https://alane019.github.io/timed-javascript-quiz/>
 
 ## Usage 
 To use contents of this repository, you must **[INSTRUCTIONS]**
