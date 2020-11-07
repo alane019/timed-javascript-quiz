@@ -1,4 +1,4 @@
-# template-static-website
+# timed-javascript-quiz
 
 ## Description 
 
