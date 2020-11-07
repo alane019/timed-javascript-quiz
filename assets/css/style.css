@@ -1,0 +1,101 @@
+/*Strip the ul of padding and list styling*/
+
+#site-name {
+
+   position: absolute;
+   left: 8px;
+   top: 5px;
+   padding: 5px; 
+}
+
+
+#site-name h1 {
+   font-size: 3rem;
+}
+
+#nav {
+  
+   position: absolute;
+   right: 0;
+   padding: 5px;
+
+}
+
+.jumbotron {
+
+   margin: 0 px;
+   border-radius: 0px;
+   
+}
+
+.content{
+   margin-left: 10px;
+}
+
+.content-body{
+   margin: 10px;
+   padding: 10px;
+   max-width: 700px;
+
+}
+
+.content-body img{
+ height: 200px;
+ float: left;
+ margin: 20px;
+ margin-left: 0px;
+}
+/*Create a horizontal list with spacing*/
+li {
+   display:inline-block;
+   float: left;
+   margin-right: 4px;
+   border: rgb(75, 73, 73) solid 3px;
+   border-radius: 6px;
+   letter-spacing: 2px;
+
+}
+
+/* ---------------------------------- */
+
+/*Style for nav menu item links*/
+li a {
+   display:block;
+   min-width:140px;
+   height: 50px;
+   text-align: center;
+   line-height: 50px;
+   color: #fff;
+   background: #2f3036;
+   text-decoration: none;
+}
+/*Hover state  for nav menu item links*/
+li:hover a {
+   background: #b8b4b4;
+   text-decoration: none;
+   color: rgb(16, 23, 24);
+   font-weight: bold;
+   text-shadow: #2f3036 0 0 4px 4px;
+}
+
+
+
+/* ---------------------------------- */
+
+/*Responsive Styles*/
+@media screen and (max-width : 760px){
+   /*Make dropdown links appear inline*/
+   ul {
+       position: static;
+       display: none;
+   }
+   /*Create vertical spacing*/
+   li {
+       margin-bottom: 1px;
+   }
+   /*Make all menu links full width*/
+   ul li, li a {
+       width: 100%;
+   }
+}
+
