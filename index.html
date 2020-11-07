@@ -1,60 +1,40 @@
-<!-- \assets\css -->
-
-<!doctype html>
 <html lang="en">
-<head>
+ <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Timed Javascript Quiz/title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets\css\style.css">  
-    
-</head>
+ </head>
 <body>
-<div class="header">
-    <div id="nav"> 
-        <ul>
-            <li>
-                <a href="#">Contact</a>
-            </li>
-            <li>
-                <a href="#">Portfolio</a>
-            </li>
-            <li>
-                <a href="#">About</a>
-            </li>
-        </ul>
-    </div> 
-    <div class="jumbotron">
-        <div id="site-name">  
-            <h1>Site Name</h1> 
-        </div>
- 
+    <div id="pageContainer" class="container"> 
+<header>
+    <div class="row header-row">
+        <div class="col-sm-4">
+          <h2 id="site-name">Timed&nbsp;Javascript&nbsp;Quiz</h2> 
+       </div>                  
+            <div class="col-sm-8 nav-row-container-column">
+                  <div class="row red-line  nav-button-row">                 
+                              <div class="col  nav-link-div-container">
+                                  <span class="nav-link-item"> <a  class="nav-link-no-stack" href="#">High Scores</a> </span>
+                              </div>
+                              <div class="col currentTab nav-link-div-container">
+                                  <span class="nav-link-item"> <a class="nav-link-no-stack" href="#">Take Quiz</a> </span>
+                            </div>
+                    </div>
+            </div>
     </div>
-</div>
-   
+</header>
+<hr>
 <div class="content"> 
-<h1>Page heading</h1>
+<h2>Ready to start the quiz?</h2>
 <div class="content-body"> 
-
-    <img src="assets\images\example-screenshot.png" alt="example screenshot"></img>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Minima optio vero id at quibusdam aperiam consectetur voluptatum, 
-        quaerat doloremque ad error quos fuga maxime eius unde ipsum illum corrupti nihil?
-    </p>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Minima optio vero id at quibusdam aperiam consectetur voluptatum, 
-        quaerat doloremque ad error quos fuga maxime eius unde ipsum illum corrupti nihil?
-    </p>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Minima optio vero id at quibusdam aperiam consectetur voluptatum, 
-        quaerat doloremque ad error quos fuga maxime eius unde ipsum illum corrupti nihil?
-    </p>
-
+    <p> Answer as many of the javascript questions as possible before the countdown timer reaches zero. </p>
+    <p> If you answer all of the questions correctly before the time expires, you win the game. </p>
+    <p> You will have an opportunity to save your initials to the high score log at the end of the quiz. </p>
 </div> 
-
+</div>
+</div>
+</div> 
 </body>
 </html>
