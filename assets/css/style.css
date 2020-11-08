@@ -9,12 +9,25 @@
    color: #2d2d2d;
 }
 
-#current-item-content{
-  padding: 5px 25px 5px 25px;
-  margin-bottom: 100px;
+#question-div{
+  padding: 35px 25px 35px 25px;
+  margin-bottom: 33px;
+  margin-top: 33px;
+  border: rgba(191, 228, 28, 0.616) dashed 6px;
 
 }
+.tf-div-item{
 
+   background-color: rgba(84, 238, 192, 0.377);
+   border: gray solid 2px;
+   padding: 5px 10px 5px 10px;
+   margin: 8px;
+   font-family: Arial, Helvetica, sans-serif ;
+   font-size: x-large;
+   max-width: 150px;
+   text-align: center;
+   
+}
 
 /* ------------------------ */
 
