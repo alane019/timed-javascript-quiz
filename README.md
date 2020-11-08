@@ -11,7 +11,7 @@ The purpose of this repository is <**PURPOSE**>
 
 ## Table of Contents
 
-  - [course-section-name](#course-section-name)
+  - [Timed javascript quiz](#Timed-javascript-quiz)
   - [Description](#description)
   - [Table of Contents](#table-of-contents)
   - [examples](#examples)
@@ -27,7 +27,7 @@ To use contents of this repository, you must **[INSTRUCTIONS]**
 
 ## Screenshots
 
-![EXAMPLE-SCREENSHOT](./assets/images/example-screenshot.png)
+![EXAMPLE-SCREENSHOT](./assets/images/screenshot.jpg)
 
 
 ## License

@@ -1,4 +1,24 @@
 
+
+#current-item-heading{
+   margin-bottom: .5rem;
+   font-family: inherit;
+   font-weight: 500;
+   line-height: 1.2;
+   font-size: x-large;
+   color: #2d2d2d;
+}
+
+#current-item-content{
+  padding: 5px 25px 5px 25px;
+  margin-bottom: 100px;
+
+}
+
+
+/* ------------------------ */
+
+
 html, body{
    background-color:rgba(255, 255, 255, 0.863);
 }
@@ -30,7 +50,9 @@ font-size: 2.5rem;
    padding-top: .25rem;
    padding-bottom: .25rem;
    padding-left: 1rem;
-   padding-right: 1rem;
+   padding-right: 3rem;
+   align-content: right;
+   margin-left: 3rem;
 }
 
 .nav-link-div-container{
@@ -38,16 +60,17 @@ font-size: 2.5rem;
    padding-bottom: .25rem;
    text-align: center;
    margin: 2px;
-   border: white inset 2px;
+   border: white outset 1px;
    background-color: #2d2d2d ;
    color: rgb(255, 255, 255);
    text-decoration: none;
-   /* border: rgb(75, 73, 73) solid 3px; */
    border-radius: 6px;
    letter-spacing: 1.5px;
    line-height: 45px;
    background-color: #2f3036;
    text-decoration: none;
+  /* max-width: 200px; */ 
+  
 }
 
 .nav-link-item a {
@@ -87,12 +110,13 @@ div .currentTab{
   
 }
 
+/*
 .content-body img{
  height: 200px;
  float: left;
  margin: 20px;
  margin-left: 0px;
-}
+} */
 
 /* ---------------------------------- */
 
