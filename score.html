@@ -1,7 +1,7 @@
 <html lang="en">
  <head>
     <meta charset="UTF-8">
-    <title>Timed Javascript Quiz</title>
+    <title>Saved score: Timed Javascript Quiz</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets\css\style.css">  
@@ -33,29 +33,46 @@
 <form>
 
     <div id="current-item-heading"> 
-    Ready to start the quiz?
+   Saved scores
     </div>
 
     <div id="question-div">  
-    Answer as many of the javascript questions as possible before the countdown timer reaches zero. </p>
+        <div id="saved-score-div" class="">
+            <div id="saved-initials-div" class="saved-score-div-item"> Player:   </div>
+            <br/>
+            <div id="saved-score-div" class="saved-score-div-item"> Score:  </div>
+        </div>
     </div> 
 
-    <div id="tf-div" class="d-none">
-        <button id="true-div" class="tf-div-item"> True </button>
-        <button id="false-div" class="tf-div-item"> False </button>
-    </div>
 
-    <div id="start-btn-div" class="later-add-display-none">
-        <button id="start-btn" class="btn btn-primary start" value=".">Start Quiz</button>
-    </div>
-    <br/>
-     <div>   </div>
-    <div id="time-div" class="">Time remaining: 120</div>
-    <div id="number-correct-div" class="">Number correct: 0</div>
+
 </form>
 
 
+<!-- Must stay on page to prevent error -->
+<div id="tf-div" class="d-none">
+    <button id="true-div" class="tf-div-item"> True </button>
+    <button id="false-div" class="tf-div-item"> False </button>
+</div>
+
+<div id="start-btn-div" class="d-none">
+    <button id="start-btn" class="btn btn-primary start" value=".">Start Quiz</button>
+</div>
+
 </div>
 </div> 
+<script>
+    window.onload = function(){
+    let initDiv =   document.getElementById("saved-initials-div");
+    let hiScoreDiv = document.getElementById("saved-score-div");
+
+    var savedInits = localStorage.getItem("initials");
+    var savedScore = localStorage.getItem("initials");
+
+    initDiv.textContent = initDiv.textContent + savedInits;
+    hiScoreDiv.textContent = hiScoreDiv.textContent + savedScore;
+
+    }
+</script>
 </body>
 </html>

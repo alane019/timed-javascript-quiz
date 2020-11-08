@@ -13,12 +13,13 @@
   padding: 35px 25px 35px 25px;
   margin-bottom: 33px;
   margin-top: 33px;
-  border: rgba(191, 228, 28, 0.616) dashed 6px;
+  border: rgba(191, 228, 28, 0.416) dashed 6px;
 
 }
 .tf-div-item{
 
-   background-color: rgba(84, 238, 192, 0.377);
+   background-color: rgba(84, 238, 192, 0.14);
+   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.11);
    border: gray solid 2px;
    padding: 5px 10px 5px 10px;
    margin: 8px;
@@ -29,6 +30,26 @@
    
 }
 
+.saved-score-div-item{
+   background-color: rgba(124, 109, 24, 0.14);
+   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.11);
+   border: gray solid 2px;
+   padding: 5px 10px 5px 10px;
+   margin: 2px;
+   font-family: Arial, Helvetica, sans-serif ;
+   font-size: x-large;
+   max-width: 400px;
+   text-align: left;
+}
+
+#saved-score-div, #saved-initials-div{
+   background-color: rgba(123, 165, 118, 0.514);
+   align-content: center;
+   text-align: left;
+   padding-left: 40px;
+   padding-top: 26px;
+   padding-bottom: 26px;
+}
 /* ------------------------ */
 
 
@@ -66,6 +87,7 @@ font-size: 2.5rem;
    padding-right: 3rem;
    align-content: right;
    margin-left: 3rem;
+   opacity: 0.1;
 }
 
 .nav-link-div-container{
