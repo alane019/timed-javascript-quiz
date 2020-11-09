@@ -2,11 +2,16 @@
 
 ## Description 
 
-***work in progress***
+This is an interactive quiz focused on Javascript and related web technologies. 
 
-This assignment is focused on  <**SUBJECT**>
+The quiz includes a time limit after which the user's score is finalized and saved to a high score variable in local storage. 
 
-The purpose of this repository is <**PURPOSE**>
+At the start of the quiz, the user will have 2 minutes on the countdown timer. 
+
+If a question is answered incorrectly, 30 seconds will be removed from the current time limit. 
+
+The quiz ends when the user answers all questions or the time limites reaches zero. 
+
 
 
 ## Table of Contents
