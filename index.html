@@ -8,36 +8,79 @@
     <script src="script.js"></script>
  </head>
 <body>
-    <div id="pageContainer" class="container"> 
-<header>
-    <div class="row header-row">
-        <div class="col-sm-6">
-          <h2 id="site-name">Timed Javascript Quiz</h2> 
-       </div>                  
-            <div class="col-sm-6 nav-row-container-column">
-                  <div class="row red-line  nav-button-row">                 
-                              <div class="col currentTab  nav-link-div-container">
-                                  <span class="nav-link-item"> <a  class="nav-link-no-stack" href="#">Saved&nbsp;Scores</a> </span>
-                              </div>
-                              <div class="col currentTab nav-link-div-container">
-                                  <span class="nav-link-item"> <a class="nav-link-no-stack" href="#">Take&nbsp;Quiz</a> </span>
-                            </div>
-                    </div>
+
+<!------ MODAL -------------------------------------------------------------------->
+<!------ MODAL -------------------------------------------------------------------->
+<!-- mPopup box -->
+<div id="mpopupBox" class="mpopup">
+    <!-- mPopup content -->
+    <div class="mpopup-content">
+        <div class="mpopup-head">
+            <span class="close">×</span>
+            <h2>Saved scores</h2>
+        </div>
+        <div class="mpopup-main">
+            <div id="modal-item-heading"> 
+                Saved scores and initials 
             </div>
+            </br>
+            <!-- Add initals and scores here -->
+              <!-- bootstrap row -->
+              <div class="row" id="score-log-headers"> 
+                <!-- initials go in first column -->
+                <div class="col log-header" id="initial-header">
+                    Saved Initals
+                </div>
+                <div class="col log-header" id="score-header">
+                   Saved Score
+               </div>
+            </div>
+
+            <div class="row" id="score-log-div"> 
+                <!-- initials go in first column -->
+                <div class="col log initials" id="initials-go-here">
+                    [none saved]
+                </div>
+                <div class="col log scores" id="scores-go-here">
+                   [none saved]
+               </div>
+            </div> <!-- end row -->
+           </br>
+        </div> <!-- end of modal popup main div --- -->
+        <div class="mpopup-foot">
+            <p>Complete the quiz to add your score to this list</p>
+        </div>
     </div>
-</header>
-<hr>
+</div>
+<!------ /END MODAL -------------------------------------------------------------------->
+<!------ /END MODAL  -------------------------------------------------------------------->
 
+    <div id="header-container" class="container">
+    <header id="header">
+        <div no-wrap="no-wrap" class="row header-row">
+            <div no-wrap="no-wrap" class="col-sm-6">
+              <h2 no-wrap="no-wrap" id="site-name">Timed Javascript Quiz</h2> 
+           </div>                  
+           <div class="col-sm-6 nav-row-container-column">
+                                    
+            <div no-wrap="no-wrap" id="high-score-link-div" class="col currentTab  nav-link-div-container">
+                <span class="nav-link-item">
+                   <a  id="mpopupLink" class="nav-link-no-stack" href="javascript:void(0);">View&nbsp;Saved&nbsp;Scores</a>
+                </span>
+            </div>
+        </div>
+    </header>
+   </div>
 
-
-<form>
-
+    <div id="page-container" class="container"> 
+    <form>
+ 
     <div id="current-item-heading"> 
-    Ready to start the quiz?
+    Click the Start Quiz button to begin.
     </div>
 
     <div id="question-div">  
-    Answer as many of the javascript questions as possible before the countdown timer reaches zero. </p>
+    Answer as many of the questions as possible before the countdown timer reaches zero. </p>
     </div> 
 
     <div id="tf-div" class="d-none">
@@ -45,13 +88,22 @@
         <button id="false-div" class="tf-div-item"> False </button>
     </div>
 
-    <div id="start-btn-div" class="later-add-display-none">
+    <div id="start-btn-div" class="">
         <button id="start-btn" class="btn btn-primary start" value=".">Start Quiz</button>
     </div>
+    <div id="time-div" class=""><p><b>Seconds remaining: </b> <span class="stat seconds-remaining"> 120 </span> </p></div>
+    <div id="number-correct-div" class=""> 
+      <span style="color: gray;">  
+       <p><b>Number correct: </b> <span class="stat number-correct"> 0 </span>  </p>
+       <p><b>Number answered: </b><span class="stat"> 0 </span> </p>
+      </span>
+    </div>
     <br/>
-     <div>   </div>
-    <div id="time-div" class="">Time remaining: 120</div>
-    <div id="number-correct-div" class="">Number correct: 0</div>
+    <br/>
+    <br/>
+    <br/>
+    <hr>
+    <br/>
 </form>
 
 

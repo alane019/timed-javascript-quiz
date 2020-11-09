@@ -1,42 +1,43 @@
 
 window.onload = function() {
 ///////////////////////////////////////
-
-  let questions = [
-   { question: "This question will not appear.", answer: "This will not be used"},
-   { question: "Javascript is a case-sensitive language.", answer: "T"},
-    { question: "jQuery is a programming language", answer: "F"},
-    { question: "You can parse strings to interger values in javascript?", answer: "T"},
-    { question: "Stringify is a JSON method", answer: "T"},
-    { question: "Bootstrap is a programming language", answer: "F"},
-    { question: "Parse is a JSON method", answer: "T"},
-    { question: "end", answer: "This will not be used"}
-   ];
-
-  //[not needed] let quizState = "ready"
-   //[not needed] let startButton = document.getElementById("start-btn-div");
-   let startButtonDiv = document.getElementById("start-btn");
-   let questionDiv = document.getElementById("question-div");
-   let currentItemHeading = document.getElementById("current-item-heading");
-   const trueDiv = document.getElementById("true-div");
-   const falseDiv = document.getElementById("false-div");
-   const tfDiv = document.getElementById("tf-div");
-   const pageContainer = document.getElementById("pageContainer");
-
+  //these need to be reset to original values to restart quiz without refreshing page
+  // function quizReset does this around line 125;
   let questionNumber = 0;
   let time = 120; //2 minutes;
-  let timeDiv = document.getElementById("time-div");
   let numberCorrect = 0; 
-  let numberCorrectDiv = document.getElementById("number-correct-div");
   let timerOn = true;
-  let trueOrFalse = "";
   let initials = "";
 
 
+  let questions = [
+   { question: "-----This question will not appear-----", answer: "-----This will not be used-----"},
+   { question: "Javascript is a case-sensitive language.", answer: "T"},
+    { question: "jQuery is a programming language", answer: "F"},
+    { question: "You can parse strings to integer values in javascript", answer: "T"},
+    { question: "Stringify is a JSON method", answer: "T"},
+    { question: "Bootstrap is a javascript runtime", answer: "F"},
+    { question: "Parse is a JSON method", answer: "T"},
+    { question: "-----end-----", answer: "-----This will not be used------"}
+   ];
+   
+   //
+   let startButton = document.getElementById("start-btn");
+   let questionDiv = document.getElementById("question-div");
+   let currentItemHeading = document.getElementById("current-item-heading");
+   const tfDiv = document.getElementById("tf-div");
+   const pageContainer = document.getElementById("page-container");
+   let timeDiv = document.getElementById("time-div");
+   let numberCorrectDiv = document.getElementById("number-correct-div");
+
+
    let showNextQuestion = function(){
+      numberCorrectDiv.innerHTML = '<p><b>Number correct: </b> <span class="stat number-correct">' + numberCorrect +
+      '</span></p><p><b>Number answered: </b><span class="stat">' + (parseInt(questionNumber)) +  '</span></p>';
+
       questionNumber++;
       let q = questions[questionNumber];
-      if(q.question == "end"){
+      if(q.question == "-----end-----"){
          gameComplete();
          return false;        
       }
@@ -46,15 +47,50 @@ window.onload = function() {
    }
 
    let gameComplete = function(){
-      pageContainer.style.backgroundColor = "rgb(32, 154, 24, 0.28)";
+      /*
+      pageContainer.style.backgroundColor = "rgba(109, 109, 109, 0.411)";
+      questionDiv.style.backgroundColor = "#ccccc";
+      questionDiv.style.boxShadow = "0 -2px 6px 4px rgb(255 255 255 / 38%)";
+      */
+      pageContainer.classList.add("game-result");
+      questionDiv.classList.add("game-result");
+
       timerOn = false;
-      initials = prompt(`Enter your initials to save with score: `)
-      currentItemHeading.textContent = "Game complete!";
-      questionDiv.innerHTML = "<p>FINAL SCORE: " + numberCorrect + "</p> <p> Initials: " + initials + " </p> <p>   Good job! </p>";
+      initials = "-" + prompt(`Enter your 3 letter initials to save with your score: `);
+       if(initials == " " || initials == " null"){
+         initials = "Unknown";
+      } 
+
+      initials = initials.substring(1,4);
+      initials = initials.toUpperCase();
+      alert("Initials saved as:  \n " + initials);
+      
+      currentItemHeading.textContent = "Quiz Results";
+      let numberOfQuestions = questions.length -2;
+      let percentScore = (100 * (numberCorrect / numberOfQuestions)).toString(); // could have repeating decimals;
+      percentScore = percentScore.substring(0,4) + "%" ;
+      console.log(percentScore)
+      questionDiv.innerHTML = "<p> <b>Final Score: </b> " + percentScore + "</p> <p><b> Initials:</b> " + initials + " </p>";
+
+      if(numberCorrect > 0) {
+         questionDiv.innerHTML = questionDiv.innerHTML +   " <p> Well done! </p>";
+      } else{
+         questionDiv.innerHTML = questionDiv.innerHTML +   " <p> Study and try again! </p>";
+      }
+
+      // save scrore and initials to local storage
       localStorage.setItem("initials", initials);
-      localStorage.setItem("score", numberCorrect);
-   
-   }
+      localStorage.setItem("percentScore", percentScore);
+
+      //make true/false buttons display:none;
+       // and remove display:none from Start Quiz button;
+      tfDiv.classList.add("d-none");
+      startButton.classList.remove("d-none");
+       // update Start Quiz button text to "Restart Quiz"
+       startButton.textContent = "Restart Quiz";
+      //do not reset globals until start button is pressed;
+      // ---> Otherwise, timer will restart.
+   } //END of gameComplete function ~~~~~~~~~~~~~~~~~~~~~~~~;
 
    // correct and incorrect functions
    var incorrect = function(){
@@ -66,9 +102,6 @@ window.onload = function() {
    var correct = function(){
       numberCorrect = numberCorrect + 1;
       console.log(numberCorrect);
-      numberCorrectDiv.textContent = "Number correct: " + numberCorrect;
-      console.log("Correct");
-    //  alert("Correct.");
    }
 
   // True false button event handler
@@ -95,21 +128,30 @@ window.onload = function() {
                 correct();
             }
          }
-      }  // end of: "target is button"
       showNextQuestion();
+      }  // end of: "target is button"
    });
 
+   // Funciton to reset  global variables to initial values 
+   let quizReset = function(){
+       questionNumber = 0;
+       time = 120; //2 minutes;
+       numberCorrect = 0; 
+       timerOn = true;
+       initials = "";
+       pageContainer.classList.remove("game-result");
+       questionDiv.classList.remove("game-result");
+       
+   }
 
    // Game start function
-   startButtonDiv.addEventListener("click", function(event) {
+   startButton.addEventListener("click", function(event) {
       event.preventDefault();
       if(event.target.matches("button")) {
-        // [OK: message appears when button clicked]  alert("clicked");
+         quizReset();
          showNextQuestion();
-         startButtonDiv.classList.add("d-none");
-          //[not needed]  startButton.visibility = "hidden";
           tfDiv.classList.remove("d-none");
-          startButtonDiv.classList.add("d-none");
+          startButton.classList.add("d-none");
 
           let gameTimer = window.setInterval(function(){
             if(timerOn != true){
@@ -117,25 +159,68 @@ window.onload = function() {
             }
 
             time = parseInt(time) - 1; 
-            timeDiv.textContent = "Seconds remaining: " + time;
-            numberCorrectDiv.textContent = "Number correct: " + numberCorrect;
+            timeDiv.innerHTML = '<p><b>Seconds remaining: </b>  <span class="stat seconds-remaining"> <span class="highlight">' + time  + '</span> </span></p>';
+          
 
             if(time == 0){
                gameComplete();
                clearInterval(gameTimer);
             }
-      
          }, 1000);
-      
       }
    });
 
-   
+/* ---------------------------------------------
+------------------------------------------------
+GENERIC CSS/JS/HTML MODAL (FOR SAVED USER SCORE)
+------------------------------------------------
+----------------------------------------------*/
 
-   /* 
-   while (answerList.firstChild) {
-         answerList.removeChild(answerList.firstChild);
-      }
-   */
+// get the mPopup
+var mpopup = document.getElementById('mpopupBox');
 
+// get the link that opens the mPopup
+var mpLink = document.getElementById("mpopupLink");
+
+// get the close action element
+var close = document.getElementsByClassName("close")[0];
+
+// open the mPopup once the link is clicked
+mpLink.onclick = function() {
+    mpopup.style.display = "block";
+    updateSavedScores();
+ }
+
+// close the mPopup once close element is clicked
+close.onclick = function() {
+    mpopup.style.display = "none";
+}
+
+// close the mPopup when user clicks outside of the box
+window.onclick = function(event) {
+    if (event.target == mpopup) {
+        mpopup.style.display = "none";
+    }
+}
+
+/* ----------------------------------------
+  / END MODAL 
+--------------------------------------------*/
+
+
+/* ------------------------------------------------
+---------------------------------------------------
+Function to add local storage values to modal form
+---------------------------------------------------
+--------------------------------------------------*/
+   let updateSavedScores = function() {
+         let savedInits = localStorage.getItem("initials");
+         console.log(savedInits);
+         let savedScore = localStorage.getItem("percentScore");
+         console.log(savedScore);
+      let initialsGoHere = document.getElementById("initials-go-here");
+      let scoresGoHere = document.getElementById("scores-go-here");
+      initialsGoHere.textContent = savedInits;
+      scoresGoHere.textContent = savedScore;
+   }
 } //end window onload

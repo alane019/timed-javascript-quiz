@@ -1,35 +1,175 @@
 
+#header{
+ /* color can be transparent since it's covered by #header-container */
+   background-color: rgba(53, 48, 48,0.0);
+   padding-bottom: 1px;
+   padding-top: 10px;
+   padding-right: 33px;
+   padding-left: 33px;  
+   max-width: 700px;
+   min-width: 305px;
+   vertical-align: middle;
+   margin: 0px;
+}
 
-#current-item-heading{
+#header-container{
+  /* margin: 0 !important; */
+   align-content: center;
+   vertical-align: middle;
+   padding: none;
+   max-width: 700px;
+   min-width: 305px;
+   background-color: rgb(53, 48, 48);
+}
+
+#page-container{
+   background-color: rgba(179, 177, 177, 0.74);
+   max-width: 700px;
+   min-width: 305px;
+ /*  padding: 9px 12px 50px 12px; */
+   box-shadow: rgba(58, 58, 58, 0.377) 1px 1px 2px 1px; 
+  }
+
+/* --------------------------------------------------------- */
+   /* row and columns that contains link to  view saved
+   score and initials, right side of header */
+/* --------------------------------------------------------- */
+#high-score-link-div {
+   opacity: 0.55;
+   cursor: default;
+   text-shadow: 0 0 2px #000000e6;
+   /*border: #80808026 inset 1px; */
+   padding-top: .1rem;
+   padding-bottom: .1rem;
+   text-align: center;
+   margin: 2px;
+   border: rgba(133, 122, 122, 0.089) solid .3px;
+   text-decoration: none;
+   border-radius: 6px;
+   letter-spacing: 1.2px;
+   line-height: 45px;
+   text-decoration: none;
+  /*
+   background-color: rgb(45 45 45 / 5%) ;
+  max-width: 200px;
+  filter: drop-shadow(1px 1px 2px  #ffffff77);  */ 
+}
+
+#high-score-link-div a {
+   font-size: 14px;
+   color: rgb(44, 188, 255);
+   text-decoration: none;
+   font-weight: bold;
+} 
+
+.nav-row-container-column{
+   padding-top: .25rem;
+   padding-bottom: .25rem;
+}
+
+.nav-button-row {
+   padding-top: .25rem;
+   padding-bottom: .25rem;
+   padding-left: 1rem;
+   padding-right: 3rem;
+   align-content: right;
+   margin-left: 3rem;
+   opacity: 0.1;
+}
+
+#high-score-link-div a:hover{
    margin-bottom: .5rem;
    font-family: inherit;
-   font-weight: 500;
-   line-height: 1.2;
-   font-size: x-large;
    color: #2d2d2d;
+   color: hsl(0, 0%, 100%);
+   text-shadow: 0 0 2px #53464673;
 }
 
-#question-div{
-  padding: 35px 25px 35px 25px;
-  margin-bottom: 33px;
-  margin-top: 33px;
-  border: rgba(191, 228, 28, 0.416) dashed 6px;
+/* --------------------------------------------------------- */
+/* ----------------------------------------------------------*/
+/* --------------------------------------------------------- */
 
+#start-btn{
+   border: none;
+   background-color:rgb(175 7 7 / 88%);
+   border-radius: 25px;
+   color: hsl(0, 0%, 100%);
+   display: inline-block;
+   font-size: .9rem;
+   line-height: 22px;
+   margin: 8px 16px 10px 20px;
+   padding: 9px 32px;
+   text-align: center;
+   letter-spacing: .77px;
+   cursor: pointer;
+   text-shadow: 0 0 2px #0e0e1ad0;
+   filter: drop-shadow(1px 2px 3px  #0e0e1ad0);
+   /*filter: drop-shadow(1px 2px 3px  #0e0e1ad0); */
+}
+
+#start-btn:hover{
+   background-color: rgba(175, 7, 7, 0.98);
+   color: hsl(0, 0%, 100%);
+   text-shadow: 0 0 2px #2b191998;
+   cursor: pointer;
+   filter: drop-shadow(1px 1.5px 2.5px  #0e0e1ad0);
+}
+#current-item-heading{
+   font-weight: 600;
+   margin-bottom: 11px;
+}
+
+#question-div {
+   padding: 7px 15px 7px 15px;
+   margin: 7px;
+   font-family: arial;
+   letter-spacing: .1px;
+   border: rgb(44 46 50 / 42%) inset 1px;
+   background-color: #ccccccdc;
+   box-shadow: 1px 1px 2px 0px inset #00000041;
+   max-width: 350px;
+}
+
+#time-div p, #number-correct-div p{
+   margin-bottom: 1.5px;
 }
 .tf-div-item{
-
-   background-color: rgba(84, 238, 192, 0.14);
-   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.11);
+   background-color: rgb(236 238 237 / 34%);
+   box-shadow: 1px 1px .5px .5px rgba(0, 0, 0, 0.062);
    border: gray solid 2px;
-   padding: 5px 10px 5px 10px;
+   padding: 2px 20px;
+   border-radius:4px;
    margin: 8px;
    font-family: Arial, Helvetica, sans-serif ;
-   font-size: x-large;
+   font-size: .98rem;
    max-width: 150px;
    text-align: center;
-   
 }
+   /*text-align: center;
+   position: relative; */
+.stat{
+   padding-left: 52px;
+}
+.seconds-remaining{
+  padding-left: 36px !important;
 
+}
+.highlight{
+   background-color: rgba(209, 243, 13, 0.212)  !important;
+   padding: 0 7px 0 7px; 
+}
+/* span formatting for in-game stats  */
+.stat:before{
+   content: "";
+}
+/* span formatting for in-game stats  */
+.number-correct{
+   padding-left: 71px !important;  
+}
+/* span formatting for in-game stats  
+.number-correct:before{
+   content: "    ";
+}  */ /* rendered nbsp; works in content in before pseudo-selector */ 
 .saved-score-div-item{
    background-color: rgba(124, 109, 24, 0.14);
    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.11);
@@ -52,99 +192,40 @@
 }
 /* ------------------------ */
 
-
-html, body{
-   background-color:rgba(255, 255, 255, 0.863);
+form{
+   padding: 15px;
 }
 
-#pageContainer{
-   background-color: rgba(109, 109, 109, 0.411);
-   max-width: 1234px;
-   margin-top: 5px;
-   padding: 20px 30px 100px 30px;
-   box-shadow: rgba(58, 58, 58, 0.377) 1px 1px 2px 1px; 
-  }
+body {
+   background-color: #5e5e5eec;
+}
   
-.header-row {
- max-width: 1234px;
+header{
+ max-width: 1174px;
 }
 
 #site-name {
-color: #2d2d2d;
-font-size: 2.5rem;
- 
+   color: #ffffffbd;
+   font-size: 1.5rem;
+   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   text-shadow: #eb946257 1px 0 2.5px;
+   letter-spacing: 0.25;
+   font-variant: all-small-caps
 }
 
-.nav-row-container-column{
-   padding-top: .25rem;
-   padding-bottom: .25rem;
+/* game complete classes  ------------------------------*/
+/* ------------------------------------------------------*/
+#page-container .game-result{
+   background-color: rgba(109, 109, 109, 0.411) !important;
+}
+#question-div .game-result{
+ background-color: #cccccc !important;
+ box-shadow: 0 -2px 6px 4px rgba(255, 255, 255, 0.38) !important;
 }
 
-.nav-button-row {
-   padding-top: .25rem;
-   padding-bottom: .25rem;
-   padding-left: 1rem;
-   padding-right: 3rem;
-   align-content: right;
-   margin-left: 3rem;
-   opacity: 0.1;
-}
 
-.nav-link-div-container{
-   padding-top: .25rem;
-   padding-bottom: .25rem;
-   text-align: center;
-   margin: 2px;
-   border: white outset 1px;
-   background-color: #2d2d2d ;
-   color: rgb(255, 255, 255);
-   text-decoration: none;
-   border-radius: 6px;
-   letter-spacing: 1.5px;
-   line-height: 45px;
-   background-color: #2f3036;
-   text-decoration: none;
-  /* max-width: 200px; */ 
-  
-}
-
-.nav-link-item a {
-   font-size: 15px;
-   color: rgb(255, 255, 255);
-} 
- 
-.nav-link-no-stack:hover{
-   text-decoration: none;
-}
-
-.nav-link-div-container:hover{
-   background-color: #5a5a5ae8;
-   cursor: pointer;
-}
-
-div .currentTab{
-   opacity: .55;
-   cursor: default;
-   text-shadow: 0 0 2px black; 
-}
-
-.currentTab:hover{
-   cursor: default;
-   text-shadow: 0 0 2px black; 
-   text-decoration: none;
-   text-shadow: none;
-   background-color: #2d2d2d ;
-}
-
-.currentTab a:hover{
-   text-decoration: none;
-   cursor: default;
-   text-decoration: none;
-   text-shadow: none;
-   background-color: #2d2d2d ;
-  
-}
-
+/* ------------------------------------------------------*/
+/* ------------------------------------------------------*/
 /*
 .content-body img{
  height: 200px;
@@ -153,13 +234,99 @@ div .currentTab{
  margin-left: 0px;
 } */
 
-/* ---------------------------------- */
-
-/*Responsive Styles*/
-@media screen and (max-width : 770px){
-   /*Make dropdown links appear inline*/
+/* -----------Responsive Styles-------------------*/
+@media screen and (max-width : 625px){
+   
 #site-name{
-   font-size: 2rem;
+   font-size: 1.25rem;
 }
+}
+/* -------------------------------------------
+
+MODAL ----------------------------------------
+
+----------------------------------------------*/
+
+/* mPopup box style */
+.mpopup {
+   display: none;
+   position: fixed;
+   z-index: 1;
+   padding-top: 100px;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   overflow: auto;
+   background-color: rgb(0,0,0);
+   background-color: rgba(0,0,0,0.4);
+}
+.mpopup-content {
+   position: relative;
+   background-color: #fefefe;
+   margin: auto;
+   padding: 0;
+   width: 60%;
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+   -webkit-animation-name: animatetop;
+   -webkit-animation-duration: 0.4s;
+   animation-name: animatetop;
+   animation-duration: 0.4s
 }
 
+.mpopup-head {
+   padding: 2px 16px;
+   background-color: rgba(175, 7, 7, 0.98);
+   color: white;
+}
+.mpopup-main {padding: 2px 16px;}
+.mpopup-foot {
+   padding: 2px 16px;
+   background-color: #6d6a6a;
+   color: #ffffff;
+}
+
+/* add animation effects */
+@-webkit-keyframes animatetop {
+   from {top:-300px; opacity:0}
+   to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+   from {top:-300px; opacity:0}
+   to {top:0; opacity:1}
+}
+
+/* close button style */
+.close {
+   color: white;
+   float: right;
+   font-size: 28px;
+   font-weight: bold;
+}
+
+.close:hover, .close:focus {
+   color: #000;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+
+/* MODAL SCORE BOOTSTRAP DIVS -------------- */
+ #score-log-div * {
+   padding-top: 5px;
+   padding-bottom: 5px;
+   font-weight: bold;
+   color: #323232;
+  /* border: solid gray 1px;  */
+   
+}
+#score-log-div {
+   margin-left: 8px;
+   margin-right: 8px;
+}
+ #score-log-headers{
+   margin-left: 5px;
+   margin-right: 5px;
+}
+ /* ---------------------------------------- */
