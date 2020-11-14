@@ -2,7 +2,7 @@
 window.onload = function() {
 ///////////////////////////////////////
   //these need to be reset to original values to restart quiz without refreshing page
-  // function quizReset does this around line 125;
+  // function quizReset does this around line 130;
   let questionNumber = 0;
   let time = 120; //2 minutes;
   let numberCorrect = 0; 
@@ -21,7 +21,7 @@ window.onload = function() {
     { question: "-----end-----", answer: "-----This will not be used------"}
    ];
    
-   //
+   // - - - - - - - -
    let startButton = document.getElementById("start-btn");
    let questionDiv = document.getElementById("question-div");
    let currentItemHeading = document.getElementById("current-item-heading");
@@ -30,7 +30,7 @@ window.onload = function() {
    let timeDiv = document.getElementById("time-div");
    let numberCorrectDiv = document.getElementById("number-correct-div");
 
-
+   //This function should run when it's time for the next question.
    let showNextQuestion = function(){
       numberCorrectDiv.innerHTML = '<p><b>Number correct: </b> <span class="stat number-correct">' + numberCorrect +
       '</span></p><p><b>Number answered: </b><span class="stat">' + (parseInt(questionNumber)) +  '</span></p>';
@@ -46,12 +46,9 @@ window.onload = function() {
       questionDiv.textContent =  q.question;     
    }
 
+   //This function should run when the game is complete
    let gameComplete = function(){
-      /*
-      pageContainer.style.backgroundColor = "rgba(109, 109, 109, 0.411)";
-      questionDiv.style.backgroundColor = "#ccccc";
-      questionDiv.style.boxShadow = "0 -2px 6px 4px rgb(255 255 255 / 38%)";
-      */
+
       pageContainer.classList.add("game-result");
       questionDiv.classList.add("game-result");
 
@@ -83,22 +80,21 @@ window.onload = function() {
       localStorage.setItem("percentScore", percentScore);
 
       //make true/false buttons display:none;
-       // and remove display:none from Start Quiz button;
+       //  remove display:none from Start Quiz button;
       tfDiv.classList.add("d-none");
       startButton.classList.remove("d-none");
        // update Start Quiz button text to "Restart Quiz"
        startButton.textContent = "Restart Quiz";
-      //do not reset globals until start button is pressed;
-      // ---> Otherwise, timer will restart.
    } //END of gameComplete function ~~~~~~~~~~~~~~~~~~~~~~~~;
 
-   // correct and incorrect functions
+   // correct and incorrect functions carry out standard actions for each type of user response. 
+   //This should run if user's quiz response is incorrect
    var incorrect = function(){
       console.log("Incorrect");
       alert("Incorrect.  \n 30 seconds will be substracted from the remaining time");
       time = parseInt(time) - 30;
    }
-
+   //This should run if user's quiz response is correct.
    var correct = function(){
       numberCorrect = numberCorrect + 1;
       console.log(numberCorrect);
@@ -161,8 +157,7 @@ window.onload = function() {
             time = parseInt(time) - 1; 
             timeDiv.innerHTML = '<p><b>Seconds remaining: </b>  <span class="stat seconds-remaining"> <span class="highlight">' + time  + '</span> </span></p>';
           
-
-            if(time == 0){
+            if(time <= 0){
                gameComplete();
                clearInterval(gameTimer);
             }

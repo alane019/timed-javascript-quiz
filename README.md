@@ -1,5 +1,7 @@
 # Timed javascript quiz
 
+Demo is viewable here: <https://alane019.github.io/timed-javascript-quiz/>
+
 ## Description 
 
 This is an interactive quiz focused on Javascript and related web technologies. 
@@ -10,9 +12,7 @@ At the start of the quiz, the user will have 2 minutes on the countdown timer.
 
 If a question is answered incorrectly, 30 seconds will be removed from the current time limit. 
 
-The quiz ends when the user answers all questions or the time limites reaches zero. 
-
-
+The quiz ends when the user answers all questions or the quiz time limits reaches zero. 
 
 ## Table of Contents
 
@@ -20,14 +20,10 @@ The quiz ends when the user answers all questions or the time limites reaches ze
   - [Description](#description)
   - [Table of Contents](#table-of-contents)
   - [examples](#examples)
-  - [Usage](#usage)
   - [License](#license) 
 
 ## Examples
 Demo is viewable here: <https://alane019.github.io/timed-javascript-quiz/>
-
-## Usage 
-To use contents of this repository, you must **[INSTRUCTIONS]**
 
 
 ## Screenshots
